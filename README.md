@@ -8,6 +8,6 @@ Flask , HTML and CSS has been used for coding the site whereas postgresql is use
 
 Goodread and Google Books API has been used to extract details and information about books.
 
-You can check the site hosted in heroku through this link [a link] (https://readers-insight.herokuapp.com/) .
+You can check the site hosted in heroku through this link https://readers-insight.herokuapp.com/ .
 
 
