@@ -1,3 +1,3 @@
-from app import index
+from app import home
 
-app = index()
+app = home()
