@@ -1,13 +1,13 @@
 Flask
 Flask-Session
 psycopg2-binary
-SQLAlchemy
+
 flask-session=0.3.1
 sqlalchemy
 SQLAlchemy==0.7.9
 sqlalchemy-migrate==0.7.2
 SQLAlchemy==0.7.9
-Jinja2==2.6
+
 fcntl
 
 
