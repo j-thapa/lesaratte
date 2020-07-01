@@ -15,7 +15,7 @@ where isbn is an ISBN number of the book,  website will return a JSON response c
     
     
 The resulting JSON should follow the format:
-{<br>
+<br>{<br>
 
     "title": "Memory",<br>
     "author": "Doug Lloyd",<br>
@@ -23,6 +23,6 @@ The resulting JSON should follow the format:
     "isbn": "1632168146",<br>
     "review_count": 28,<br>
     "average_score": 5.0<br>
-}
+}<br>
 
 
