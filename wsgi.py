@@ -1,3 +1,4 @@
-from app import home
+from app.main import app
 
-application = home()
+if __name__ == "__main__":
+        app.run()
