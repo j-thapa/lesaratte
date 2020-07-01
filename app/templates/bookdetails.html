@@ -1,0 +1,171 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" >Leseratte</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">  <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('profile') }}"> Profile </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('about') }}">About</a>
+      </li>
+
+
+    </ul>
+    <form action="{{ url_for('search') }}" method="post" class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name=result>
+      </form>
+
+    <form action="{{ url_for('signout') }}" >
+      <button class="btn btn-outline-danger" type="submit">Log Out</button>
+        </form>
+  </div>
+</nav>
+</header>
+
+
+
+<div class="split left">
+
+
+
+
+    <div class='leftin'>
+    <p style="float: left;"> <img src={{ images }} height="250px" width="150px" border="2px" class="imgin"> </p>
+  <div class="textformat">  <p class="textin"> <br> Category <br> {{ categories }} <br><br> ISBN <br> {{book.ISBN}} <br> <br> Published Year <br> {{book.year}}<br> </p>
+
+
+<br>
+<br>
+<br>
+<div class="insidetext">
+  Goodread Rating : {{goodrating }}  <span>&#9733;</span> <br>
+
+            Total Ratings in Goodread :  {{goodcount }} <br> <br>
+
+
+       <h6> {{ book.author}} </h6>
+        <h2> {{ book.title }} </h2> <br>
+          {{ description }}
+
+  </div>
+  </div>
+
+  </div>
+
+
+
+</div>
+
+<div class="split right">
+
+
+
+
+    <div class="container2">
+<h2>Reviews</h2>
+
+           {% for review in reviews %}
+
+
+
+           <div class="card">
+  <div class="card-header">
+    {{ review.userid }}     {{ review.rating }}
+
+  </div>
+  <div class="card-body">
+
+    <p class="card-text"> {{ review.comments }}</p>
+
+  </div>
+</div>
+   {% else %}
+
+   <div class="card">
+<div class="card-header">
+
+</div>
+<div class="card-body">
+<p class="card-text">  No Comments yet.</p>
+
+</div>
+</div>
+ {% endfor %}
+
+
+      <form  action="{{ url_for('book', book_isbn=book.isbn) }}" method="post">
+        <div class="form-group">
+          <label for="comment">Enter your Comment:</label>
+          <textarea class="form-control" rows="5" id="comment1" name=comments></textarea>
+        </div>
+
+
+
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="&#9733">
+  <label class="form-check-label" for="inlineRadio1">&#9733</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="&#9733 &#9733">
+  <label class="form-check-label" for="inlineRadio2">&#9733 &#9733 </label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="&#9733 &#9733 &#9733" >
+  <label class="form-check-label" for="inlineRadio3">&#9733 &#9733 &#9733 </label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="&#9733 &#9733 &#9733 &#9733">
+    <label class="form-check-label" for="inlineRadio2">&#9733 &#9733 &#9733 &#9733</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="&#9733 &#9733 &#9733 &#9733 &#9733" >
+    <label class="form-check-label" for="inlineRadio3">&#9733 &#9733  &#9733 &#9733  &#9733 </label>
+</div>
+
+<button class="btn btn-dark"> submit </button>
+</form>
+
+
+<br>
+<br>
+
+
+
+
+
+
+
+
+{% with messages = get_flashed_messages() %}
+ {% if messages %}
+    {% for message in messages %}
+
+    <div class="alert alert-danger" role="alert">
+      {{message}}
+
+</div>
+    {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+
+
+
+
+
+ {% endblock %}

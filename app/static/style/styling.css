@@ -1,0 +1,188 @@
+html>body
+{
+  background-image:url("https://wallpaperaccess.com/full/1918192.jpg");
+  background-size: 3000px;
+  background-repeat: no-repeat;
+
+}
+
+
+
+
+
+
+.card-group
+{
+height: 700px;
+padding:80px;
+
+
+
+}
+#card1
+{
+  background-color: #F5F5F5;
+}
+
+.card-img
+{
+height: 600px;
+border-color: white;
+opacity: 70%;
+}
+
+h5
+{
+  font-weight: bolder;
+  color: darkcyan;
+}
+
+hr.style14 {
+  border: 0;
+  height: 1px;
+  background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+}
+
+.split {
+  height: 92.5%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Control the left side */
+.left {
+  left: 0;
+  background-color:indigo;
+  color:white;
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+  background-color: #F5F5F5;
+}
+
+/* If you want the content centered horizontally and vertically */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* Style the image inside the centered container, if needed */
+.centered img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+.container
+{
+  margin-top: 5%;
+  background-image:url("https://t3.ftcdn.net/jpg/01/06/08/30/240_F_106083011_rS3PJLjxYcpKSa9ie8Wp07wmeOC4sP7Z.jpg");
+}
+
+div.row {
+  margin: 100px;
+  padding: 20px;
+  background-color: white;
+}
+
+.select1
+  {
+    width:500px;
+  }
+
+
+
+.card-img-top
+{
+  padding: 20px;
+  height: 250px;
+  width: 200px;
+}
+
+
+
+.imgin
+{
+  margin:15px;
+}
+
+.insidetext
+{
+  margin-left:15px;
+
+}
+
+.textformat
+{
+  color:	#D0D3D4;
+}
+
+.container2
+{
+  padding:20px;
+  font-size: 12;
+}
+
+
+
+
+
+#top1 {
+    top: 7.5%;
+    background-color: indigo;
+    height: 95%;
+    left: 0;
+    right: 0;
+    position: fixed;
+    bottom: 0;
+}
+
+#profile1{
+    top: 15%;
+
+    height: 80%;
+    left: 10%;
+    right:10%;
+    position: fixed;
+    bottom: 30%;
+}
+
+#top {
+    top: 7.5%;
+    background-color: white;
+    height: 95%;
+    left: 0;
+    right: 0;
+    position: fixed;
+    bottom: 0;
+}
+
+#profile
+{
+    top: 15%;
+
+    height: 80%;
+    left: 10%;
+    right:10%;
+    position: fixed;
+    bottom: 30%;
+    background-color: indigo;
+}
+
+.about
+{
+  padding: 20px;
+  margin: 20 px;
+  color: 	#D0D3D4;
+}

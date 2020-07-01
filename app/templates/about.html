@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+{% block body %}
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" >Leseratte</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">  <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('profile') }}"> Profile </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('about') }}">About</a>
+      </li>
+
+
+    </ul>
+    <form action="{{ url_for('search') }}" method="post" class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name=result>
+      </form>
+
+    <form action="{{ url_for('signout') }}" >
+      <button class="btn btn-outline-danger" type="submit">Log Out</button>
+        </form>
+  </div>
+</nav>
+</header>
+
+
+
+<div id="top">
+
+  <div class="card" id="profile">
+  <div class="card-body">
+
+     <p class="about"> This  website has been created as Project1 for CS50's Web Designing with Python and JavaScript. Flask , HTML and CSS is used for writing codes
+     where as PostgreSQl as database for this.
+
+<br>
+
+    Goodread API and GoogleBooks API are used to extract details and ratings of different books by thier ISBN number.
+
+    <br>
+
+    For furthur query on this project  , you can contact me on through my  email jenisht1@gmail.com or through  <a href="https://www.linkedin.com/in/jenish-thapa-4346b1179/"> LinkedIn <a>
+
+      </p>
+
+
+
+
+
+    </div>
+  </div>
+</div>
+</div>
+
+
+</div>
+
+
+  {% endblock %}

@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+  first page
+
+{% endblock %}
+
+{% block body %}
+
+
+<div class="card-group">
+  <div class="card">
+    <div class="card bg-dark text-white">
+  <img class="card-img" src="https://cdn.dribbble.com/users/2127319/screenshots/11299407/reading_4x.jpg" alt="Card image">
+  <div class="card-img-overlay">
+    <h5 class="card-title"> Leseratte </h5>
+    <p class="card-text">The perfect place for leseratten to explore and share their love and insights for books and reading.</p>
+
+  </div>
+</div>
+
+  </div>
+  <div class="card">
+      <div class="card-body" id="card1">
+
+    <form action="{{ url_for('signedin') }}" method="post">
+      <div class="form-group">
+        <label for="exampleInputEmail1">User Id</label>
+      <input type="text" name="user" placeholder="Enter Your User id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+
+
+        <input type="password" name="pass" placeholder="Enter Your Password" class="form-control" id="exampleInputPassword1">
+        </div>
+       <button class="btn btn-success"> Log In </button>
+
+
+     </form>
+
+     <br>
+<hr class="style14">
+<br>
+
+
+
+
+<form action="{{ url_for('signedup') }}" >
+  <h6> Don't have a user account ?  <button class="btn btn-primary btn-lg"> Create a User Account  </button> </h6?
+  </form>
+  <br>
+  <br>
+  <br>
+  <br>
+  {% with messages = get_flashed_messages() %}
+   {% if messages %}
+      {% for message in messages %}
+
+      <div class="alert alert-danger" role="alert">
+
+{{message}}
+</div>
+
+      {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+  </div>
+  </div>
+
+</div>
+{% endblock %}

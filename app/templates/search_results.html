@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" >Leseratte</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">  <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('profile') }}"> Profile </a>
+      </li>
+    <li>
+        <a class="nav-link" href="{{ url_for('about') }}">About</a>
+      </li>
+
+
+    </ul>
+    <form action="{{ url_for('search') }}" method="post" class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name=result>
+      </form>
+
+    <form action="{{ url_for('signout') }}" >
+      <button class="btn btn-outline-danger" type="submit">Log Out</button>
+        </form>
+  </div>
+</nav>
+</header>
+
+
+
+
+<div class="container" id='table' >
+  <br>
+
+<h5>Search Reults
+</h5>
+<br>
+
+<table class="table table-sm  table-striped" >
+
+    <tr>
+      <th style="width: 25%">ISBN</th>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Published Year</th>
+
+    </tr>
+    {% for book in books %}
+    <tr>
+
+     <td>  <a href="{{ url_for('book', book_isbn=book.isbn) }}"> {{book.isbn}} </a> </td>
+      <td><a href="{{ url_for('book', book_isbn=book.isbn) }}"> {{book.title}}</a></td>
+      <td> <a href="{{ url_for('book_search', book_a=book.author) }}">{{book.author}}</a></td>
+      <td><a href="{{ url_for('book_search', book_a=book.year) }}">{{book.year}}</a></td>
+      </tr>
+      {% endfor %}
+
+
+
+</table>
+<br>
+<br>
+</div>
+
+
+
+
+
+ {% endblock %}

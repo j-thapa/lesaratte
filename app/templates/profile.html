@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+{% block body %}
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" >Leseratte</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">  <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('profile') }}"> Profile </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('about') }}">About</a>
+      </li>
+
+
+    </ul>
+    <form action="{{ url_for('search') }}" method="post" class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name=result>
+      </form>
+
+    <form action="{{ url_for('signout') }}" >
+      <button class="btn btn-outline-danger" type="submit">Log Out</button>
+        </form>
+  </div>
+</nav>
+</header>
+
+
+
+
+<div id="top1">
+
+  <div class="card bg-light text-dark" id="profile1">
+  <div class="card-body">
+    <div class="insideprofile">
+
+    <p style="float: left;">   <img src="https://www.clipartkey.com/mpngs/m/93-935185_unknown-character-clipart-png-download-unknown-person-picture.png" class="img-circle" alt="Cinque Terre" width="200px" left="40">
+      <div class='leftin'> </p>
+  <div class="textform">  <p class="textin"> <br> UserID : {{user.userid}}  <br> <br><br> Email : {{user.email}}  <br> <br> <br> Comments  <br> <br> </p>
+
+    {% for review in review %}
+
+
+
+    <div class="card">
+ <div class="card-header">
+ {{ review.userid }}   rated   {{ review.rating }} on Book ISBN : {{review.isbn}}
+
+ </div>
+ <div class="card-body">
+
+ <p class="card-text"> {{ review.comments }}</p>
+
+ </div>
+ </div>
+ {% else %}
+
+ <div class="card">
+ <div class="card-header">
+
+ </div>
+ <div class="card-body">
+ <p class="card-text">  No Comments yet.</p>
+
+ </div>
+ </div>
+ {% endfor %}
+
+
+
+    </div>
+  </div>
+</div>
+</div>
+
+
+</div>
+
+
+  {% endblock %}
