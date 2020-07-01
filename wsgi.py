@@ -1,3 +1,3 @@
 from app import home
 
-app = home()
+application = home()
