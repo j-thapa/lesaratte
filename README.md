@@ -15,14 +15,16 @@ where isbn is an ISBN number of the book,  website will return a JSON response c
     
     
 The resulting JSON should follow the format:
-<br>{<br>
+<html>
+<br> {
 
-    "title": "Memory",<br>
-    "author": "Doug Lloyd",<br>
-    "year": 2015,<br>
-    "isbn": "1632168146",<br>
-    "review_count": 28,<br>
-    "average_score": 5.0<br>
+    "title": "Memory",
+    "author": "Doug Lloyd",
+    "year": 2015,
+    "isbn": "1632168146",
+    "review_count": 28,
+    "average_score": 5.0
 }<br>
+</html>
 
 
