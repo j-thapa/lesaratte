@@ -10,4 +10,15 @@ Goodread and Google Books API has been used to extract details and information a
 
 You can check the site hosted in heroku through this link [a link] (https://readers-insight.herokuapp.com/) .
 
+API Access: If users make a GET request to the website’s as  https://readers-insight.herokuapp.com/api/<isbn> route, where <isbn> is an ISBN number of the book,  website will return a JSON response containing the book’s title, author, publication date, ISBN number, review count, and average score. 
+The resulting JSON should follow the format:
+{
+    "title": "Memory",
+    "author": "Doug Lloyd",
+    "year": 2015,
+    "isbn": "1632168146",
+    "review_count": 28,
+    "average_score": 5.0
+}
+
 
