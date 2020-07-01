@@ -1,11 +1,14 @@
-Flask
-Flask-Session
+
+flask-Session
 psycopg2-binary
 
 flask-session=0.3.1
 sqlalchemy
 SQLAlchemy==1.3.0
 sqlalchemy-migrate==0.7.2
+flask
+requests
+gunicorn
 
 
 fcntl
