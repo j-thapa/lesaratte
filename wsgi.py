@@ -1,1 +1,3 @@
-web : gunicorn wsgi:application
+from app import index
+
+app = index()
