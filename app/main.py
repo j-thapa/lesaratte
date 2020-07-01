@@ -22,7 +22,7 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 app = Flask(__name__)
 
 # Check for environment variable
-if not os.getenv("DATABASE_UR"):
+if not os.getenv("DATABASE_URL"):
     raise RuntimeError("DATABASE_URL is not set")
 
 # Configure session to use filesystem
@@ -31,7 +31,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # Set up database
-engine = create_engine(os.getenv("DATABASE_UR"),pool_size=20, max_overflow=0)
+engine = create_engine(os.getenv("DATABASE_URL"),pool_size=20, max_overflow=0)
 db = scoped_session(sessionmaker(bind=engine))
 
 # default value of the logged session
